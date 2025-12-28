@@ -7,7 +7,6 @@ import { SecuritySection } from "@/components/ui/security-section"
 import { TestimonialSection } from "@/components/ui/testimonial-section"
 import { ContainerScroll } from "@/components/ui/container-scroll-animation"
 import { cn } from "@/lib/utils"
-import Image from "next/image"
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30" style={{ transform: 'translateZ(0)' }}>
@@ -89,14 +88,17 @@ export default function Home() {
             </>
           }
         >
-          <Image
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=75"
-            alt="Professional workspace"
-            height={720}
-            width={1400}
-            className="mx-auto rounded-2xl object-cover h-full object-left-top"
-            draggable={false}
-          />
+          <video
+            src="https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/test_demo.mp4"
+            controls
+            preload="metadata"
+            className="mx-auto rounded-2xl object-cover h-full w-full"
+            style={{
+              objectPosition: 'left top',
+            }}
+          >
+            Your browser does not support the video tag.
+          </video>
         </ContainerScroll>
       </div>
 

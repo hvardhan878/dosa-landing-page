@@ -1,142 +1,103 @@
 "use client"
 
-import { ShaderBackground } from "@/components/ui/hero-shader"
 import { Button } from "@/components/ui/button"
 import { LiquidButton } from "@/components/ui/liquid-glass-button"
 import { LogoCloud } from "@/components/ui/logo-cloud-3"
 import { SecuritySection } from "@/components/ui/security-section"
 import { TestimonialSection } from "@/components/ui/testimonial-section"
+import { ContainerScroll } from "@/components/ui/container-scroll-animation"
 import { cn } from "@/lib/utils"
-import { useEffect, useRef } from "react"
-
+import Image from "next/image"
 export default function Home() {
-  const photoRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!photoRef.current) return
-      
-      const scrollY = window.scrollY
-      const maxScroll = window.innerHeight * 0.5 // Reveal over first half of viewport
-      const revealProgress = Math.min(scrollY / maxScroll, 1)
-      
-      // Transform from -60% (showing bottom portion) to 0% (showing full image)
-      const translateY = -60 + (revealProgress * 60)
-      photoRef.current.style.transform = `translateY(${translateY}%)`
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Initial call
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30" style={{ transform: 'translateZ(0)' }}>
       
-      {/* Hero Section - Full Page */}
-      <div className="w-full h-screen relative overflow-hidden" style={{ transform: 'translateZ(0)' }}>
-        <ShaderBackground>
-          <header className="relative z-20 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
-            {/* Logo */}
-            <div className="flex items-center">
-               <div className="text-3xl font-bold tracking-tighter">DOSA</div>
-            </div>
+      {/* Header Navigation */}
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
+        {/* Logo */}
+        <div className="flex items-center">
+          <div className="text-3xl font-bold tracking-tighter text-white">DOSA</div>
+        </div>
 
-            {/* Navigation - Glass UI */}
-            <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md" style={{ transform: 'translateZ(0)' }}>
-              <a
-                href="#platform"
-                className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
-              >
-                Platform
-              </a>
-              <a
-                href="#solutions"
-                className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
-              >
-                Solutions
-              </a>
-              <a
-                href="#security"
-                className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
-              >
-                Security
-              </a>
-               <a
-                href="#customers"
-                className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
-              >
-                Customers
-              </a>
-            </nav>
+        {/* Navigation - Glass UI */}
+        <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md" style={{ transform: 'translateZ(0)' }}>
+          <a
+            href="#platform"
+            className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
+          >
+            Platform
+          </a>
+          <a
+            href="#solutions"
+            className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
+          >
+            Solutions
+          </a>
+          <a
+            href="#security"
+            className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
+          >
+            Security
+          </a>
+          <a
+            href="#customers"
+            className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
+          >
+            Customers
+          </a>
+        </nav>
 
-            {/* Login & Liquid Button */}
-            <div className="hidden sm:flex items-center gap-4">
-              <Button variant="ghost" className="text-white hover:text-white hover:bg-white/10 text-sm font-medium">
-                Log in
-              </Button>
-              <div className="h-10 w-32">
-                <LiquidButton className="w-full h-full text-white font-medium">
-                  Get Demo
-                </LiquidButton>
-              </div>
-            </div>
-            {/* Mobile Menu Button Placeholder */}
-            <div className="md:hidden text-white">
-                <Button variant="ghost" size="icon" className="hover:bg-white/10">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" /></svg>
-                </Button>
-            </div>
-          </header>
+        {/* Login & Liquid Button */}
+        <div className="hidden sm:flex items-center gap-4">
+          <Button variant="ghost" className="text-white hover:text-white hover:bg-white/10 text-sm font-medium">
+            Log in
+          </Button>
+          <div className="h-10 w-32">
+            <LiquidButton className="w-full h-full text-white font-medium">
+              Get Demo
+            </LiquidButton>
+          </div>
+        </div>
+        {/* Mobile Menu Button Placeholder */}
+        <div className="md:hidden text-white">
+          <Button variant="ghost" size="icon" className="hover:bg-white/10">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </Button>
+        </div>
+      </header>
 
-          {/* Text Content - Upper portion, Centered */}
-          <div className="absolute top-0 left-0 right-0 flex flex-col justify-center items-center z-10" style={{ height: '60%' }}>
-            <div className="text-center max-w-4xl px-8">
-              {/* Main Heading - Serif font */}
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-tight">
+      {/* Hero Section with Container Scroll Animation */}
+      <div className="bg-black">
+        <ContainerScroll
+          titleComponent={
+            <>
+              <h1 className="text-4xl font-semibold text-white">
                 Professional Class AI
+                <br />
+                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                  Domain-specific AI
+                </span>
               </h1>
-
-              {/* Subtitle - Sans-serif font */}
-              <p className="text-base md:text-lg lg:text-xl font-sans text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-white/90 mt-6 max-w-3xl mx-auto">
                 Domain-specific AI for law firms, professional service providers, and the Fortune 500.
               </p>
-
-              {/* Button */}
-              <button className="px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer">
+              <button className="mt-8 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer">
                 Request a Demo
               </button>
-            </div>
-          </div>
-
-          {/* Photo Section - Bottom portion with Scroll Reveal */}
-          <div 
-            className="absolute bottom-0 left-0 right-0 h-[40%] overflow-hidden z-10"
-            style={{ 
-              transform: 'translateZ(0)',
-            }}
-          >
-            <div 
-              ref={photoRef}
-              className="w-full h-[250%] relative"
-              style={{
-                transform: 'translateY(-60%)',
-                willChange: 'transform',
-              }}
-            >
-              <img
-                src="https://t4.ftcdn.net/jpg/03/17/25/45/360_F_317254576_lKDALRrvGoBr7gQSa1k4kJBx7O2D15dc.jpg"
-                alt="Professional"
-                className="w-full h-full object-cover object-center"
-                style={{
-                  filter: 'blur(2px)',
-                }}
-              />
-            </div>
-          </div>
-        </ShaderBackground>
+            </>
+          }
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1400&q=75"
+            alt="Professional workspace"
+            height={720}
+            width={1400}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+        </ContainerScroll>
       </div>
 
       {/* Trusted By Section */}

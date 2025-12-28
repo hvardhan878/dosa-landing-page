@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { useMotionValue, animate, motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import useMeasure from 'react-use-measure';
 
 type InfiniteSliderProps = {
@@ -37,8 +37,40 @@ export function InfiniteSlider({
   const translation = useMotionValue(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [key, setKey] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+  const animationControlsRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Intersection Observer to pause animation when not visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    const container = containerRef.current;
+    if (container) {
+      observer.observe(container);
+    }
+
+    return () => {
+      if (container) {
+        observer.unobserve(container);
+      }
+    };
+  }, []);
 
   useEffect(() => {
+    // Don't animate if not visible or if dimensions aren't ready
+    if (!isVisible || (direction === 'horizontal' && !width) || (direction === 'vertical' && !height)) {
+      if (animationControlsRef.current) {
+        animationControlsRef.current.stop();
+      }
+      return;
+    }
+
     let controls;
     const size = direction === 'horizontal' ? width : height;
     const contentSize = size + gap;
@@ -68,7 +100,13 @@ export function InfiniteSlider({
       });
     }
 
-    return controls?.stop;
+    animationControlsRef.current = controls;
+
+    return () => {
+      if (controls) {
+        controls.stop();
+      }
+    };
   }, [
     key,
     translation,
@@ -79,6 +117,7 @@ export function InfiniteSlider({
     isTransitioning,
     direction,
     reverse,
+    isVisible,
   ]);
 
   const hoverProps = effectiveDurationOnHover
@@ -95,7 +134,11 @@ export function InfiniteSlider({
     : {};
 
   return (
-    <div className={cn('overflow-hidden', className)}>
+    <div 
+      ref={containerRef}
+      className={cn('overflow-hidden', className)} 
+      style={{ transform: 'translateZ(0)' }}
+    >
       <motion.div
         className='flex w-max'
         style={{
@@ -104,6 +147,8 @@ export function InfiniteSlider({
             : { y: translation }),
           gap: `${gap}px`,
           flexDirection: direction === 'horizontal' ? 'row' : 'column',
+          transform: 'translateZ(0)',
+          willChange: 'transform',
         }}
         ref={ref}
         {...hoverProps}

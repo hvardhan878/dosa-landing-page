@@ -1,37 +1,14 @@
 "use client"
 
 import type React from "react"
-import { useEffect, useRef, useState } from "react"
-import { MeshGradient } from "@paper-design/shaders-react"
 
 interface ShaderBackgroundProps {
   children: React.ReactNode
 }
 
 export function ShaderBackground({ children }: ShaderBackgroundProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [isActive, setIsActive] = useState(false)
-
-  useEffect(() => {
-    const handleMouseEnter = () => setIsActive(true)
-    const handleMouseLeave = () => setIsActive(false)
-
-    const container = containerRef.current
-    if (container) {
-      container.addEventListener("mouseenter", handleMouseEnter)
-      container.addEventListener("mouseleave", handleMouseLeave)
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("mouseenter", handleMouseEnter)
-        container.removeEventListener("mouseleave", handleMouseLeave)
-      }
-    }
-  }, [])
-
   return (
-    <div ref={containerRef} className="h-screen w-full relative overflow-hidden">
+    <div className="h-screen w-full relative overflow-hidden" style={{ transform: 'translateZ(0)' }}>
       {/* SVG Filters */}
       <svg className="absolute inset-0 w-0 h-0">
         <defs>
@@ -60,16 +37,26 @@ export function ShaderBackground({ children }: ShaderBackgroundProps) {
         </defs>
       </svg>
 
-      {/* Background Shaders */}
-      <MeshGradient
+      {/* Static Gradient Background */}
+      <div 
         className="absolute inset-0 w-full h-full"
-        colors={["#000000", "#8b5cf6", "#ffffff", "#1e1b4b", "#4c1d95"]}
-        speed={0.3}
+        style={{
+          background: `
+            radial-gradient(ellipse at 20% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 80%, rgba(78, 29, 149, 0.2) 0%, transparent 50%),
+            linear-gradient(180deg, #000000 0%, #0a0a0a 100%)
+          `
+        }}
       />
-      <MeshGradient
+      <div 
         className="absolute inset-0 w-full h-full opacity-60"
-        colors={["#000000", "#ffffff", "#8b5cf6", "#000000"]}
-        speed={0.2}
+        style={{
+          background: `
+            radial-gradient(ellipse at 50% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at 50% 80%, rgba(0, 0, 0, 0.8) 0%, transparent 50%)
+          `
+        }}
       />
 
       {children}

@@ -1,4 +1,3 @@
-import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { cn } from "@/lib/utils";
 
 type Logo = {
@@ -17,11 +16,11 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
     <div
       {...props}
       className={cn(
-        "overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black,transparent)]",
+        "py-4",
         className
       )}
     >
-      <InfiniteSlider gap={42} reverse duration={25} durationOnHover={15}>
+      <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
         {logos.map((logo) => (
           <img
             alt={logo.alt}
@@ -33,8 +32,7 @@ export function LogoCloud({ className, logos, ...props }: LogoCloudProps) {
             width={logo.width || "auto"}
           />
         ))}
-      </InfiniteSlider>
+      </div>
     </div>
   );
 }
-

@@ -1,3 +1,5 @@
+"use client"
+
 import { ShaderBackground } from "@/components/ui/hero-shader"
 import { Button } from "@/components/ui/button"
 import { LiquidButton } from "@/components/ui/liquid-glass-button"
@@ -5,13 +7,36 @@ import { LogoCloud } from "@/components/ui/logo-cloud-3"
 import { SecuritySection } from "@/components/ui/security-section"
 import { TestimonialSection } from "@/components/ui/testimonial-section"
 import { cn } from "@/lib/utils"
+import { useEffect, useRef } from "react"
 
 export default function Home() {
+  const photoRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!photoRef.current) return
+      
+      const scrollY = window.scrollY
+      const maxScroll = window.innerHeight * 0.5 // Reveal over first half of viewport
+      const revealProgress = Math.min(scrollY / maxScroll, 1)
+      
+      // Transform from -60% (showing bottom portion) to 0% (showing full image)
+      const translateY = -60 + (revealProgress * 60)
+      photoRef.current.style.transform = `translateY(${translateY}%)`
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial call
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30" style={{ transform: 'translateZ(0)' }}>
       
       {/* Hero Section - Full Page */}
-      <div className="w-full h-screen" style={{ transform: 'translateZ(0)', willChange: 'scroll-position' }}>
+      <div className="w-full h-screen relative overflow-hidden" style={{ transform: 'translateZ(0)' }}>
         <ShaderBackground>
           <header className="relative z-20 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
             {/* Logo */}
@@ -66,45 +91,51 @@ export default function Home() {
             </div>
           </header>
 
-          <main className="absolute bottom-12 left-8 md:left-12 z-20 max-w-2xl">
-            <div className="text-left">
-              <div
-                className="inline-flex items-center px-3 py-1 rounded-full bg-white/5 backdrop-blur-sm mb-6 relative border border-white/10"
-                style={{
-                  filter: "url(#glass-effect)",
-                }}
-              >
-                <div className="absolute top-0 left-1 right-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full" />
-                <span className="text-white/90 text-xs font-light relative z-10 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
-                    Professional Grade AI
-                </span>
-              </div>
-
-              {/* Main Heading */}
-              <h1 className="text-5xl md:text-7xl leading-[1.1] tracking-tight text-white mb-6">
-                <span className="italic font-light text-white/90">Underwriting</span> <br />
-                <span className="tracking-tight text-white font-bold">without limits.</span>
+          {/* Text Content - Upper portion, Centered */}
+          <div className="absolute top-0 left-0 right-0 flex flex-col justify-center items-center z-10" style={{ height: '60%' }}>
+            <div className="text-center max-w-4xl px-8">
+              {/* Main Heading - Serif font */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 leading-tight">
+                Professional Class AI
               </h1>
 
-              {/* Description */}
-              <p className="text-sm md:text-base font-light text-white/70 mb-8 leading-relaxed max-w-lg">
-                Spend less time on routine analysis, and more time on the strategic decisions only 
-                underwriters and private equity professionals can make. DOSA frees you from manual 
-                processes.
+              {/* Subtitle - Sans-serif font */}
+              <p className="text-base md:text-lg lg:text-xl font-sans text-white/90 mb-10 leading-relaxed max-w-3xl mx-auto">
+                Domain-specific AI for law firms, professional service providers, and the Fortune 500.
               </p>
 
-              {/* Buttons */}
-              <div className="flex items-center gap-4 flex-wrap">
-                 <button className="px-8 py-3 rounded-full bg-white text-black font-medium text-xs md:text-sm transition-all duration-200 hover:bg-gray-200 cursor-pointer">
-                  Request a Demo
-                </button>
-                <button className="px-8 py-3 rounded-full bg-transparent border border-white/20 text-white font-normal text-xs md:text-sm transition-all duration-200 hover:bg-white/10 hover:border-white/40 cursor-pointer">
-                  Watch Video
-                </button>
-              </div>
+              {/* Button */}
+              <button className="px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer">
+                Request a Demo
+              </button>
             </div>
-          </main>
+          </div>
+
+          {/* Photo Section - Bottom portion with Scroll Reveal */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 h-[40%] overflow-hidden z-10"
+            style={{ 
+              transform: 'translateZ(0)',
+            }}
+          >
+            <div 
+              ref={photoRef}
+              className="w-full h-[250%] relative"
+              style={{
+                transform: 'translateY(-60%)',
+                willChange: 'transform',
+              }}
+            >
+              <img
+                src="https://t4.ftcdn.net/jpg/03/17/25/45/360_F_317254576_lKDALRrvGoBr7gQSa1k4kJBx7O2D15dc.jpg"
+                alt="Professional"
+                className="w-full h-full object-cover object-center"
+                style={{
+                  filter: 'blur(2px)',
+                }}
+              />
+            </div>
+          </div>
         </ShaderBackground>
       </div>
 

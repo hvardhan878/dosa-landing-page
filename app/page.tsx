@@ -48,9 +48,6 @@ export default function Home() {
 
         {/* Login & Liquid Button */}
         <div className="hidden sm:flex items-center gap-4">
-          <Button variant="ghost" className="text-white hover:text-white hover:bg-white/10 text-sm font-medium">
-            Log in
-          </Button>
           <div className="h-10 w-32">
             <LiquidButton className="w-full h-full text-white font-medium">
               Get Demo
@@ -72,15 +69,11 @@ export default function Home() {
         <ContainerScroll
           titleComponent={
             <>
-              <h1 className="text-4xl font-semibold text-white">
-                Professional Class AI
-                <br />
-                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                  Domain-specific AI
-                </span>
+              <h1 className="text-4xl md:text-[4rem] font-bold mt-1 leading-none text-white">
+                Built for Modern Underwriters
               </h1>
               <p className="text-lg md:text-xl text-white/90 mt-6 max-w-3xl mx-auto">
-                Domain-specific AI for law firms, professional service providers, and the Fortune 500.
+              AI-powered tools streamline intake, verification, and document analysis across your full underwriting workflow.
               </p>
               <button className="mt-8 mb-12 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer">
                 Request a Demo
@@ -115,9 +108,10 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="relative mx-auto max-w-5xl">
             <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
-              <span className="text-gray-400">Trusted by experts.</span>
+              {/* <span className="text-gray-400">Trusted by experts.</span>
               <br />
-              <span className="font-semibold text-white">Used by the leaders.</span>
+              <span className="font-semibold text-white">Used by the leaders.</span> */}
+              <span className="font-semibold text-white">Made by experts from</span>
             </h2>
             <div className="mx-auto my-5 h-px max-w-sm bg-gray-700/50 [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
             

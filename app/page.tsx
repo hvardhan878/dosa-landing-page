@@ -83,7 +83,7 @@ export default function Home() {
               <p className="text-lg md:text-xl text-white/90 mt-6 max-w-3xl mx-auto">
                 Domain-specific AI for law firms, professional service providers, and the Fortune 500.
               </p>
-              <button className="mt-8 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer">
+              <button className="mt-8 mb-12 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer">
                 Request a Demo
               </button>
             </>

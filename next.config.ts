@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "svgl.app",
       },
+      {
+        protocol: "https",
+        hostname: "ui.aceternity.com",
+      },
     ],
   },
 };

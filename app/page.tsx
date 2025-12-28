@@ -101,17 +101,16 @@ export default function Home() {
       </div>
 
       {/* Trusted By Section */}
-      <section className="py-16 bg-black border-b border-gray-800/50 relative" style={{ transform: 'translateZ(0)', willChange: 'scroll-position' }}>
+      <section className="py-16 bg-black border-b border-gray-800/50 relative">
         <div
           aria-hidden="true"
           className={cn(
             "-z-10 -top-1/2 -translate-x-1/2 pointer-events-none absolute left-1/2 h-[120vmin] w-[120vmin] rounded-b-full",
             "bg-[radial-gradient(ellipse_at_center,var(--color-foreground)/.05,transparent_50%)]",
-            "blur-[20px]"
+            "blur-[30px]"
           )}
-          style={{ transform: 'translateZ(0)', willChange: 'transform', backfaceVisibility: 'hidden' }}
         />
-        <div className="container mx-auto px-6 relative z-10" style={{ transform: 'translateZ(0)' }}>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="relative mx-auto max-w-5xl">
             <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
               <span className="text-gray-400">Trusted by experts.</span>
@@ -120,9 +119,7 @@ export default function Home() {
             </h2>
             <div className="mx-auto my-5 h-px max-w-sm bg-gray-700/50 [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
             
-            <div style={{ transform: 'translateZ(0)', willChange: 'transform' }}>
-              <LogoCloud logos={logos} className="py-8" />
-            </div>
+            <LogoCloud logos={logos} className="py-8" />
             
             <div className="mt-5 h-px bg-gray-700/50 [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
           </div>

@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="text-3xl font-bold tracking-tighter">
-            DOSA
+            Dosa AI
           </Link>
         </div>
 

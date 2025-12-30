@@ -12,14 +12,14 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30" style={{ transform: 'translateZ(0)' }}>
       
       {/* Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
+      {/* <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full"> */}
         {/* Logo */}
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <div className="text-3xl font-bold tracking-tighter text-white">DOSA</div>
-        </div>
+        </div> */}
 
         {/* Navigation - Glass UI */}
-        <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md" style={{ transform: 'translateZ(0)' }}>
+        {/* <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md" style={{ transform: 'translateZ(0)' }}>
           <a
             href="#platform"
             className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
@@ -44,25 +44,25 @@ export default function Home() {
           >
             Customers
           </a>
-        </nav>
+        </nav> */}
 
         {/* Login & Liquid Button */}
-        <div className="hidden sm:flex items-center gap-4">
+        {/* <div className="hidden sm:flex items-center gap-4">
           <div className="h-10 w-32">
             <LiquidButton className="w-full h-full text-white font-medium">
               Get Demo
             </LiquidButton>
           </div>
-        </div>
+        </div> */}
         {/* Mobile Menu Button Placeholder */}
-        <div className="md:hidden text-white">
+        {/* <div className="md:hidden text-white">
           <Button variant="ghost" size="icon" className="hover:bg-white/10">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </Button>
         </div>
-      </header>
+      </header> */}
 
       {/* Hero Section with Container Scroll Animation */}
       <div className="bg-black">
@@ -73,11 +73,14 @@ export default function Home() {
                 Built for Modern Underwriters
               </h1>
               <p className="text-lg md:text-xl text-white/90 mt-6 max-w-3xl mx-auto">
-              AI-powered tools streamline intake, verification, and document analysis across your full underwriting workflow.
+                AI-powered tools to help you streamline intake, verification, and analysis across your full underwriting workflow.
               </p>
-              <button className="mt-8 mb-12 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer">
+              <a href="https://calendly.com/bovojon/15-min-conversation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 mb-12 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer inline-block">
                 Request a Demo
-              </button>
+              </a>
             </>
           }
         >
@@ -96,7 +99,7 @@ export default function Home() {
       </div>
 
       {/* Trusted By Section */}
-      <section className="py-16 bg-black border-b border-gray-800/50 relative">
+      <section className="py-16 bg-black relative">
         <div
           aria-hidden="true"
           className={cn(
@@ -114,16 +117,14 @@ export default function Home() {
               <span className="font-semibold text-white">Made by experts from</span>
             </h2>
             <div className="mx-auto my-5 h-px max-w-sm bg-gray-700/50 [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
-            
             <LogoCloud logos={logos} className="py-8" />
-            
             <div className="mt-5 h-px bg-gray-700/50 [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
           </div>
         </div>
       </section>
 
       {/* Vision/Philosophy Section */}
-      <section className="bg-black text-white py-32 border-t border-white/10">
+      {/* <section className="bg-black text-white py-32 border-t border-white/10">
         <div className="container mx-auto px-6">
             <div className="max-w-5xl">
                 <p className="text-xl md:text-2xl text-gray-400 mb-12 leading-relaxed max-w-3xl">
@@ -135,16 +136,16 @@ export default function Home() {
                 </h2>
             </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonial Section */}
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
 
       {/* Security Section */}
-      <SecuritySection />
+      {/* <SecuritySection /> */}
 
       {/* Solutions Section */}
-      <section id="solutions" className="py-24 bg-zinc-950">
+      {/* <section id="solutions" className="py-24 bg-zinc-950">
         <div className="container mx-auto px-6">
           <div className="mb-16 max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-white">
@@ -188,28 +189,31 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 bg-black relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black opacity-50" />
         <div className="container mx-auto px-6 text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-            Ready to realize your full potential?
+            Unlock Professional-Grade AI
           </h2>
           <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-light">
-            Discover how DOSA can put time back in your hands.
+            Discover how Dosa AI can help you streamline your underwriting workflow.
           </p>
-          <button className="px-10 py-4 rounded-full bg-white text-black font-medium text-sm hover:bg-gray-200 transition-all cursor-pointer">
+          <a href="https://calendly.com/bovojon/15-min-conversation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 rounded-full bg-white text-black font-medium text-sm hover:bg-gray-200 transition-all cursor-pointer inline-block">
             Request a Demo
-          </button>
+          </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-black border-t border-white/10">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+      {/* <footer className="py-12 bg-black border-t border-white/10"> */}
+        {/* <div className="container mx-auto px-6"> */}
+          {/* <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-1">
               <div className="text-xl font-bold mb-4">DOSA</div>
               <p className="text-gray-500 text-xs leading-relaxed">
@@ -240,49 +244,47 @@ export default function Home() {
                 <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               </ul>
             </div>
-          </div>
-          <div className="pt-8 border-t border-white/5 text-center text-xs text-gray-600">
+          </div> */}
+          {/* <div className="pt-8 border-t border-white/5 text-center text-xs text-gray-600">
             <p>© 2025 DOSA. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+          </div> */}
+        {/* </div> */}
+      {/* </footer> */}
     </div>
   )
 }
 
-// Logo data for LogoCloud component
-// Using placeholder logos - replace with actual company logos
 const logos = [
   {
-    src: "https://svgl.app/library/nvidia-wordmark-light.svg",
-    alt: "Company 1",
+    src: "/hsbc.svg",
+    alt: "HSBC",
   },
   {
-    src: "https://svgl.app/library/supabase_wordmark_light.svg",
-    alt: "Company 2",
+    src: "/microsoft.svg",
+    alt: "Microsoft",
   },
   {
-    src: "https://svgl.app/library/openai_wordmark_light.svg",
-    alt: "Company 3",
+    src: "/lloyds.svg",
+    alt: "Lloyds Banking Group",
   },
   {
-    src: "https://svgl.app/library/turso-wordmark-light.svg",
-    alt: "Company 4",
+    src: "/santander.svg",
+    alt: "Santander",
   },
   {
-    src: "https://svgl.app/library/vercel_wordmark.svg",
-    alt: "Company 5",
+    src: "/meta.svg",
+    alt: "Meta",
   },
   {
-    src: "https://svgl.app/library/github_wordmark_light.svg",
-    alt: "Company 6",
+    src: "/aia.svg",
+    alt: "AIA",
   },
   {
-    src: "https://svgl.app/library/claude-ai-wordmark-icon_light.svg",
-    alt: "Company 7",
+    src: "/georgia.svg",
+    alt: "Georgia Institute of Technology",
   },
   {
-    src: "https://svgl.app/library/clerk-wordmark-light.svg",
-    alt: "Company 8",
+    src: "/penn.svg",
+    alt: "University of Pennsylvania",
   },
 ]

@@ -73,11 +73,14 @@ export default function Home() {
                 Built for Modern Underwriters
               </h1>
               <p className="text-lg md:text-xl text-white/90 mt-6 max-w-3xl mx-auto">
-              AI-powered tools to help you streamline intake, verification, and analysis across your full underwriting workflow.
+                AI-powered tools to help you streamline intake, verification, and analysis across your full underwriting workflow.
               </p>
-              <button className="mt-8 mb-12 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer">
+              <a href="https://calendly.com/bovojon/15-min-conversation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 mb-12 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer inline-block">
                 Request a Demo
-              </button>
+              </a>
             </>
           }
         >
@@ -198,9 +201,12 @@ export default function Home() {
           <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-light">
             Discover how Dosa AI can help you streamline your underwriting workflow.
           </p>
-          <button className="px-10 py-4 rounded-full bg-white text-black font-medium text-sm hover:bg-gray-200 transition-all cursor-pointer">
+          <a href="https://calendly.com/bovojon/15-min-conversation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 rounded-full bg-white text-black font-medium text-sm hover:bg-gray-200 transition-all cursor-pointer inline-block">
             Request a Demo
-          </button>
+          </a>
         </div>
       </section>
 

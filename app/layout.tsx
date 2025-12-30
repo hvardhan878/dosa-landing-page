@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Dosa",
   description: "Professional-grade AI for underwriters.",
+  verification: {
+    google: "z7ory3era40PQXSTt3mYZpnCLIMil5xDx8WzFCu_PJE",
+  },
 };
 
 export default function RootLayout({

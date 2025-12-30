@@ -73,7 +73,7 @@ export default function Home() {
                 Built for Modern Underwriters
               </h1>
               <p className="text-lg md:text-xl text-white/90 mt-6 max-w-3xl mx-auto">
-              AI-powered tools streamline intake, verification, and document analysis across your full underwriting workflow.
+              AI-powered tools to help you streamline intake, verification, and analysis across your full underwriting workflow.
               </p>
               <button className="mt-8 mb-12 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer">
                 Request a Demo
@@ -114,9 +114,7 @@ export default function Home() {
               <span className="font-semibold text-white">Made by experts from</span>
             </h2>
             <div className="mx-auto my-5 h-px max-w-sm bg-gray-700/50 [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
-            
             <LogoCloud logos={logos} className="py-8" />
-            
             <div className="mt-5 h-px bg-gray-700/50 [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
           </div>
         </div>
@@ -250,39 +248,37 @@ export default function Home() {
   )
 }
 
-// Logo data for LogoCloud component
-// Using placeholder logos - replace with actual company logos
 const logos = [
   {
-    src: "https://svgl.app/library/nvidia-wordmark-light.svg",
-    alt: "Company 1",
+    src: "/hsbc.svg",
+    alt: "HSBC",
   },
   {
-    src: "https://svgl.app/library/supabase_wordmark_light.svg",
-    alt: "Company 2",
+    src: "/microsoft.svg",
+    alt: "Microsoft",
   },
   {
-    src: "https://svgl.app/library/openai_wordmark_light.svg",
-    alt: "Company 3",
+    src: "/lloyds.svg",
+    alt: "Lloyds Banking Group",
   },
   {
-    src: "https://svgl.app/library/turso-wordmark-light.svg",
-    alt: "Company 4",
+    src: "/santander.svg",
+    alt: "Santander",
   },
   {
-    src: "https://svgl.app/library/vercel_wordmark.svg",
-    alt: "Company 5",
+    src: "/meta.svg",
+    alt: "Meta",
   },
   {
-    src: "https://svgl.app/library/github_wordmark_light.svg",
-    alt: "Company 6",
+    src: "/aia.svg",
+    alt: "AIA",
   },
   {
-    src: "https://svgl.app/library/claude-ai-wordmark-icon_light.svg",
-    alt: "Company 7",
+    src: "/georgia.svg",
+    alt: "Georgia Institute of Technology",
   },
   {
-    src: "https://svgl.app/library/clerk-wordmark-light.svg",
-    alt: "Company 8",
+    src: "/penn.svg",
+    alt: "University of Pennsylvania",
   },
 ]

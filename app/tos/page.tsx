@@ -282,7 +282,7 @@ export default function TermsOfService() {
           <section>
             <h2 className="text-2xl font-semibold text-white mb-4">14. Governing Law</h2>
             <p>
-              These Terms are governed by and construed in accordance with the laws of [Insert jurisdiction, e.g. England and Wales], without regard to conflict of law principles.
+              These Terms are governed by and construed in accordance with the laws of England, without regard to conflict of law principles.
             </p>
           </section>
 

@@ -12,14 +12,14 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30" style={{ transform: 'translateZ(0)' }}>
       
       {/* Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
+      {/* <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full"> */}
         {/* Logo */}
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <div className="text-3xl font-bold tracking-tighter text-white">DOSA</div>
-        </div>
+        </div> */}
 
         {/* Navigation - Glass UI */}
-        <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md" style={{ transform: 'translateZ(0)' }}>
+        {/* <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md" style={{ transform: 'translateZ(0)' }}>
           <a
             href="#platform"
             className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
@@ -44,25 +44,25 @@ export default function Home() {
           >
             Customers
           </a>
-        </nav>
+        </nav> */}
 
         {/* Login & Liquid Button */}
-        <div className="hidden sm:flex items-center gap-4">
+        {/* <div className="hidden sm:flex items-center gap-4">
           <div className="h-10 w-32">
             <LiquidButton className="w-full h-full text-white font-medium">
               Get Demo
             </LiquidButton>
           </div>
-        </div>
+        </div> */}
         {/* Mobile Menu Button Placeholder */}
-        <div className="md:hidden text-white">
+        {/* <div className="md:hidden text-white">
           <Button variant="ghost" size="icon" className="hover:bg-white/10">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </Button>
         </div>
-      </header>
+      </header> */}
 
       {/* Hero Section with Container Scroll Animation */}
       <div className="bg-black">
@@ -96,7 +96,7 @@ export default function Home() {
       </div>
 
       {/* Trusted By Section */}
-      <section className="py-16 bg-black border-b border-gray-800/50 relative">
+      <section className="py-16 bg-black relative">
         <div
           aria-hidden="true"
           className={cn(
@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* Vision/Philosophy Section */}
-      <section className="bg-black text-white py-32 border-t border-white/10">
+      {/* <section className="bg-black text-white py-32 border-t border-white/10">
         <div className="container mx-auto px-6">
             <div className="max-w-5xl">
                 <p className="text-xl md:text-2xl text-gray-400 mb-12 leading-relaxed max-w-3xl">
@@ -133,16 +133,16 @@ export default function Home() {
                 </h2>
             </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonial Section */}
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
 
       {/* Security Section */}
-      <SecuritySection />
+      {/* <SecuritySection /> */}
 
       {/* Solutions Section */}
-      <section id="solutions" className="py-24 bg-zinc-950">
+      {/* <section id="solutions" className="py-24 bg-zinc-950">
         <div className="container mx-auto px-6">
           <div className="mb-16 max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-white">
@@ -186,17 +186,17 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-24 bg-black relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black opacity-50" />
         <div className="container mx-auto px-6 text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-            Ready to realize your full potential?
+            Unlock Professional-Grade AI
           </h2>
           <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-light">
-            Discover how DOSA can put time back in your hands.
+            Discover how Dosa AI can help you streamline your underwriting workflow.
           </p>
           <button className="px-10 py-4 rounded-full bg-white text-black font-medium text-sm hover:bg-gray-200 transition-all cursor-pointer">
             Request a Demo

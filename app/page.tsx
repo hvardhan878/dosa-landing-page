@@ -205,9 +205,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-black border-t border-white/10">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+      {/* <footer className="py-12 bg-black border-t border-white/10"> */}
+        {/* <div className="container mx-auto px-6"> */}
+          {/* <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-1">
               <div className="text-xl font-bold mb-4">DOSA</div>
               <p className="text-gray-500 text-xs leading-relaxed">
@@ -238,12 +238,12 @@ export default function Home() {
                 <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               </ul>
             </div>
-          </div>
-          <div className="pt-8 border-t border-white/5 text-center text-xs text-gray-600">
+          </div> */}
+          {/* <div className="pt-8 border-t border-white/5 text-center text-xs text-gray-600">
             <p>© 2025 DOSA. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+          </div> */}
+        {/* </div> */}
+      {/* </footer> */}
     </div>
   )
 }

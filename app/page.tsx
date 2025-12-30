@@ -12,14 +12,14 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30" style={{ transform: 'translateZ(0)' }}>
       
       {/* Header Navigation */}
-      {/* <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full"> */}
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
         {/* Logo */}
-        {/* <div className="flex items-center">
-          <div className="text-3xl font-bold tracking-tighter text-white">DOSA</div>
-        </div> */}
+        <div className="flex items-center">
+          <div className="text-3xl font-bold tracking-tighter text-white">Dosa</div>
+        </div>
 
         {/* Navigation - Glass UI */}
-        {/* <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md" style={{ transform: 'translateZ(0)' }}>
+        <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md" style={{ transform: 'translateZ(0)' }}>
           <a
             href="#platform"
             className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
@@ -27,12 +27,12 @@ export default function Home() {
             Platform
           </a>
           <a
-            href="#solutions"
+            href="/privacy"
             className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
           >
-            Solutions
+            Privacy
           </a>
-          <a
+          {/* <a
             href="#security"
             className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
           >
@@ -43,26 +43,31 @@ export default function Home() {
             className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
           >
             Customers
-          </a>
-        </nav> */}
+          </a> */}
+        </nav>
 
         {/* Login & Liquid Button */}
-        {/* <div className="hidden sm:flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-4">
           <div className="h-10 w-32">
-            <LiquidButton className="w-full h-full text-white font-medium">
+            <a
+              href="https://calendly.com/bovojon/15-min-conversation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full h-full text-white font-medium inline-flex items-center justify-center cursor-pointer rounded-md transition-all duration-300 hover:scale-105"
+            >
               Get Demo
-            </LiquidButton>
+            </a>
           </div>
-        </div> */}
+        </div>
         {/* Mobile Menu Button Placeholder */}
-        {/* <div className="md:hidden text-white">
+        <div className="md:hidden text-white">
           <Button variant="ghost" size="icon" className="hover:bg-white/10">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </Button>
         </div>
-      </header> */}
+      </header>
 
       {/* Hero Section with Container Scroll Animation */}
       <div className="bg-black">

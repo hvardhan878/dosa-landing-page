@@ -5,62 +5,6 @@ import Link from "next/link"
 export default function TermsOfService() {
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30">
-      <header className="relative z-20 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Link href="/" className="text-3xl font-bold tracking-tighter">
-            DOSA
-          </Link>
-        </div>
-
-        {/* Navigation - Glass UI */}
-        <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md">
-          <a
-            href="/#platform"
-            className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
-          >
-            Platform
-          </a>
-          <a
-            href="/#solutions"
-            className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
-          >
-            Solutions
-          </a>
-          <a
-            href="/#security"
-            className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
-          >
-            Security
-          </a>
-          <a
-            href="/#customers"
-            className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
-          >
-            Customers
-          </a>
-        </nav>
-
-        {/* Login & Liquid Button */}
-        <div className="hidden sm:flex items-center gap-4">
-          <Button variant="ghost" className="text-white hover:text-white hover:bg-white/10 text-sm font-medium">
-            Log in
-          </Button>
-          <div className="h-10 w-32">
-            <LiquidButton className="w-full h-full text-white font-medium">
-              Get Demo
-            </LiquidButton>
-          </div>
-        </div>
-        {/* Mobile Menu Button Placeholder */}
-        <div className="md:hidden text-white">
-          <Button variant="ghost" size="icon" className="hover:bg-white/10">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </Button>
-        </div>
-      </header>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-8 py-16">

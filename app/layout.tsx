@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DOSA - Underwriting without limits",
-  description: "Professional-grade AI for underwriters and private equity professionals. Streamline risk assessment, deal analysis, and investment decisions.",
+  title: "Dosa",
+  description: "Professional-grade AI for underwriters.",
 };
 
 export default function RootLayout({

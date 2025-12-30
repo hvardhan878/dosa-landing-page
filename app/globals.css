@@ -122,9 +122,11 @@
   html {
     scroll-behavior: smooth;
     overscroll-behavior: none;
+    background-color: black;
   }
   body {
     @apply bg-background text-foreground;
     overscroll-behavior: none;
+    background-color: black;
   }
 }

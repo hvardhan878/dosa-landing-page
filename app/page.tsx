@@ -204,7 +204,7 @@ export default function Home() {
             Unlock Professional-Grade AI
           </h2>
           <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-light">
-            Discover how Dosa AI can help you streamline your underwriting workflow.
+            Discover how Dosa can help you streamline your underwriting workflow.
           </p>
           <a href="https://calendly.com/bovojon/15-min-conversation"
             target="_blank"

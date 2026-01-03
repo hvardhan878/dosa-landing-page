@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { LogoCloud } from "@/components/ui/logo-cloud-3"
 import { ContainerScroll } from "@/components/ui/container-scroll-animation"
@@ -9,6 +9,50 @@ import { cn } from "@/lib/utils"
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    // Add VideoObject structured data
+    const videoSchema = {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      name: "Dosa - AI-Powered Underwriting Platform Demo",
+      description: "Watch how Dosa streamlines intake, verification, and analysis across your full underwriting workflow with professional-grade AI tools.",
+      thumbnailUrl: "https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/thumbnail.png",
+      uploadDate: "2025-01-01",
+      contentUrl: "https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/email_agent_demo.mp4",
+      embedUrl: "https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/email_agent_demo.mp4",
+    }
+
+    // Add BreadcrumbList structured data
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://usedosa.com",
+        },
+      ],
+    }
+
+    const script1 = document.createElement("script")
+    script1.type = "application/ld+json"
+    script1.text = JSON.stringify(videoSchema)
+    document.head.appendChild(script1)
+
+    const script2 = document.createElement("script")
+    script2.type = "application/ld+json"
+    script2.text = JSON.stringify(breadcrumbSchema)
+    document.head.appendChild(script2)
+
+    return () => {
+      document.head.removeChild(script1)
+      document.head.removeChild(script2)
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30" style={{ transform: 'translateZ(0)' }}>
       
@@ -70,6 +114,7 @@ export default function Home() {
         </div>
       </header>
 
+      <main>
       {/* Hero Section with Container Scroll Animation */}
       <div className="bg-black">
         <ContainerScroll
@@ -97,6 +142,8 @@ export default function Home() {
               controls
               preload="metadata"
               poster="https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/thumbnail.png"
+              title="Dosa - AI-Powered Underwriting Platform Demo"
+              aria-label="Dosa platform demonstration video showing AI-powered underwriting tools"
               className="mx-auto rounded-2xl object-cover h-full w-full"
               style={{
                 objectPosition: 'left top',
@@ -104,6 +151,7 @@ export default function Home() {
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
             >
+              <track kind="descriptions" />
               Your browser does not support the video tag.
             </video>
             {!isPlaying && (
@@ -241,6 +289,7 @@ export default function Home() {
           </a>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       {/* <footer className="py-12 bg-black border-t border-white/10"> */}

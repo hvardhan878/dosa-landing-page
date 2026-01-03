@@ -1,10 +1,49 @@
 import { Button } from "@/components/ui/button"
 import { LiquidButton } from "@/components/ui/liquid-glass-button"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description: "Terms of Service for Dosa - Read our terms and conditions for using our AI-powered underwriting platform.",
+  alternates: {
+    canonical: "https://usedosa.com/tos",
+  },
+  openGraph: {
+    title: "Terms of Service | Dosa",
+    description: "Terms of Service for Dosa - Read our terms and conditions for using our AI-powered underwriting platform.",
+    url: "https://usedosa.com/tos",
+  },
+}
 
 export default function TermsOfService() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://usedosa.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Terms of Service",
+        item: "https://usedosa.com/tos",
+      },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-8 py-16">

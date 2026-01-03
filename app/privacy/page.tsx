@@ -1,10 +1,46 @@
-import { Button } from "@/components/ui/button"
-import { LiquidButton } from "@/components/ui/liquid-glass-button"
-import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy Policy for Dosa - Learn how we collect, use, and protect your information when using our AI-powered underwriting tools.",
+  alternates: {
+    canonical: "https://usedosa.com/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Dosa",
+    description: "Privacy Policy for Dosa - Learn how we collect, use, and protect your information when using our AI-powered underwriting tools.",
+    url: "https://usedosa.com/privacy",
+  },
+}
 
 export default function PrivacyPolicy() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://usedosa.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Privacy Policy",
+        item: "https://usedosa.com/privacy",
+      },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-8 py-16">

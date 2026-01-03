@@ -1,14 +1,14 @@
 "use client"
 
+import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { LiquidButton } from "@/components/ui/liquid-glass-button"
 import { LogoCloud } from "@/components/ui/logo-cloud-3"
-import { SecuritySection } from "@/components/ui/security-section"
-import { TestimonialSection } from "@/components/ui/testimonial-section"
 import { ContainerScroll } from "@/components/ui/container-scroll-animation"
 import { cn } from "@/lib/utils"
 
 export default function Home() {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30" style={{ transform: 'translateZ(0)' }}>
       
@@ -90,17 +90,43 @@ export default function Home() {
             </>
           }
         >
-          <video
-            src="https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/test_demo.mp4"
-            controls
-            preload="metadata"
-            className="mx-auto rounded-2xl object-cover h-full w-full"
-            style={{
-              objectPosition: 'left top',
-            }}
-          >
-            Your browser does not support the video tag.
-          </video>
+          <div className="relative w-full h-full">
+            <video
+              ref={videoRef}
+              src="https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/email_agent_demo.mp4"
+              controls
+              preload="metadata"
+              poster="https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/thumbnail.png"
+              className="mx-auto rounded-2xl object-cover h-full w-full"
+              style={{
+                objectPosition: 'left top',
+              }}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+            >
+              Your browser does not support the video tag.
+            </video>
+            {!isPlaying && (
+              <button
+                onClick={() => {
+                  videoRef.current?.play()
+                  setIsPlaying(true)
+                }}
+                className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-all duration-300 group cursor-pointer rounded-2xl"
+                aria-label="Play video"
+              >
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/90 hover:bg-white group-hover:scale-110 transition-all duration-300 flex items-center justify-center shadow-lg">
+                  <svg
+                    className="w-8 h-8 md:w-10 md:h-10 text-black ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </button>
+            )}
+          </div>
         </ContainerScroll>
       </div>
 

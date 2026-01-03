@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Dosa",
-  description: "Professional-grade AI for underwriters.",
+  description: "Professional-grade AI for Underwriters.",
   verification: {
     google: "z7ory3era40PQXSTt3mYZpnCLIMil5xDx8WzFCu_PJE",
   },

@@ -18,7 +18,7 @@ export default function Home() {
       name: "Dosa - AI-Powered Underwriting Platform Demo",
       description: "Watch how Dosa streamlines intake, verification, and analysis across your full underwriting workflow with professional-grade AI tools.",
       thumbnailUrl: "https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/thumbnail.png",
-      uploadDate: "2025-01-01",
+      uploadDate: new Date().toISOString(),
       contentUrl: "https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/email_agent_demo.mp4",
       embedUrl: "https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/email_agent_demo.mp4",
     }

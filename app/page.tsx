@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { LogoCloud } from "@/components/ui/logo-cloud-3"
 import { ContainerScroll } from "@/components/ui/container-scroll-animation"
 import { SplineSceneBasic } from "@/components/ui/demo"
+import { GlowingEffectDemo } from "@/components/ui/glowing-effect-demo"
 import { cn } from "@/lib/utils"
 
 export default function Home() {
@@ -177,6 +178,23 @@ export default function Home() {
           </div>
         </ContainerScroll>
       </div>
+
+      {/* Features Grid Section with Glowing Effect */}
+      <section className="py-24 bg-black relative">
+        <div className="container mx-auto px-6">
+          <div className="mb-16 max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">
+              Built for high-stakes decisions
+            </h2>
+            <p className="text-lg text-gray-400">
+              Professional-grade AI tools designed for the unique demands of underwriting and credit analysis.
+            </p>
+          </div>
+          <div className="max-w-7xl mx-auto">
+            <GlowingEffectDemo />
+          </div>
+        </div>
+      </section>
 
       {/* Trusted By Section */}
       <section className="py-16 bg-black relative">

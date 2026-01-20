@@ -128,10 +128,10 @@ export default function Home() {
           titleComponent={
             <>
               <h2 className="text-4xl md:text-[4rem] font-bold mt-1 leading-none text-white">
-                See it in action
+                See It In Action
               </h2>
               <p className="text-lg md:text-xl text-white/90 mt-6 max-w-3xl mx-auto">
-                Watch how Dosa transforms complex underwriting workflows with intelligent automation and real-time insights.
+                Watch how Dosa transforms complex credit analysis workflows with intelligent automation and real-time insights.
               </p>
             </>
           }
@@ -184,10 +184,10 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="mb-16 max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">
-              Built for high-stakes decisions
+              Built For High-Stakes Decisions
             </h2>
             <p className="text-lg text-gray-400">
-              Professional-grade AI tools designed for the unique demands of underwriting and credit analysis.
+              Professional-grade AI tools designed for your team's unique workflows in underwriting and credit analysis.
             </p>
           </div>
           <div className="max-w-7xl mx-auto">
@@ -297,7 +297,7 @@ export default function Home() {
             Unlock Professional-Grade AI
           </h2>
           <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-light">
-            Discover how Dosa can streamline your underwriting workflow.
+            Discover how Dosa can streamline your credit analysis workflow.
           </p>
           <a href="https://calendly.com/bovojon/15-min-conversation"
             target="_blank"

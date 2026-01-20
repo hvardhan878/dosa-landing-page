@@ -63,7 +63,12 @@ export default function Home() {
       {/* Header Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 py-6 max-w-7xl mx-auto w-full">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
+          <img 
+            src="/mark.png" 
+            alt="Dosa Logo" 
+            className="h-10 w-10 object-contain -mb-0.5"
+          />
           <div className="text-3xl font-bold tracking-tighter text-white">Dosa</div>
         </div>
 

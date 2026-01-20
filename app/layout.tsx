@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Dosa" }],
   creator: "Dosa",
   publisher: "Dosa",
+  icons: {
+    icon: [
+      { url: "/icons/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/icon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/icon-180.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/icons/icon-32.png",
+  },
   formatDetection: {
     email: false,
     address: false,

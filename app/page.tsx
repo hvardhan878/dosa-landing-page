@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { LogoCloud } from "@/components/ui/logo-cloud-3"
 import { ContainerScroll } from "@/components/ui/container-scroll-animation"
+import { SplineSceneBasic } from "@/components/ui/demo"
 import { cn } from "@/lib/utils"
 
 export default function Home() {
@@ -66,7 +67,7 @@ export default function Home() {
         {/* Navigation - Glass UI */}
         <nav className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 backdrop-blur-md" style={{ transform: 'translateZ(0)' }}>
           <a
-            href="#jump-to-demo"
+            href="#demo"
             className="text-white/90 hover:text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-white/10 transition-all duration-200"
           >
             Platform
@@ -115,23 +116,22 @@ export default function Home() {
       </header>
 
       <main>
-      {/* Hero Section with Container Scroll Animation */}
-      <div className="bg-black">
+      {/* Hero Section with 3D Spline Scene */}
+      <section className="pt-24 bg-black">
+        <SplineSceneBasic />
+      </section>
+
+      {/* Demo Video Section with Container Scroll Animation */}
+      <div className="bg-black" id="demo">
         <ContainerScroll
           titleComponent={
             <>
-              <h1 className="text-4xl md:text-[4rem] font-bold mt-1 leading-none text-white">
-                Built for Modern Underwriters
-              </h1>
+              <h2 className="text-4xl md:text-[4rem] font-bold mt-1 leading-none text-white">
+                See it in action
+              </h2>
               <p className="text-lg md:text-xl text-white/90 mt-6 max-w-3xl mx-auto">
-                AI-powered tools to streamline intake, verification, and analysis across your full underwriting workflow.
+                Watch how Dosa transforms complex underwriting workflows with intelligent automation and real-time insights.
               </p>
-              <a href="https://calendly.com/bovojon/15-min-conversation" id="jump-to-demo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 mb-12 px-8 py-3 rounded-lg bg-white text-black font-medium text-sm md:text-base transition-all duration-200 hover:bg-gray-200 cursor-pointer inline-block">
-                Request a Demo
-              </a>
             </>
           }
         >

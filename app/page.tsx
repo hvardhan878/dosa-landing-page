@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
@@ -56,10 +57,10 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30" style={{ transform: 'translateZ(0)' }}>
+    <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30 overflow-x-hidden" style={{ transform: 'translateZ(0)' }}>
       
       {/* Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-8 py-6 max-w-7xl mx-auto w-full">
         {/* Logo */}
         <div className="flex items-center">
           <div className="text-3xl font-bold tracking-tighter text-white">Dosa</div>
@@ -106,15 +107,58 @@ export default function Home() {
             </a>
           </div>
         </div>
-        {/* Mobile Menu Button Placeholder */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden text-white">
-          <Button variant="ghost" size="icon" className="hover:bg-white/10">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="hover:bg-white/10"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
           </Button>
         </div>
       </header>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 top-[72px] z-40 md:hidden bg-black/95 backdrop-blur-md border-t border-white/10">
+          <nav className="flex flex-col px-6 py-8 space-y-4">
+            <a
+              href="#demo"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white/90 hover:text-white text-base font-medium py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-200"
+            >
+              Platform
+            </a>
+            <a
+              href="/privacy"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white/90 hover:text-white text-base font-medium py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-200"
+            >
+              Privacy
+            </a>
+            <a
+              href="https://calendly.com/bovojon/15-min-conversation"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white text-black font-medium text-sm transition-all duration-200 hover:bg-gray-200"
+            >
+              Book a Demo
+            </a>
+          </nav>
+        </div>
+      )}
 
       <main>
       {/* Hero Section with 3D Spline Scene */}

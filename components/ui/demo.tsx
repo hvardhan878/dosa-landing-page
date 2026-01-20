@@ -24,6 +24,7 @@ export function SplineSceneBasic() {
   const mousePosRef = useRef({ x: null as number | null, y: null as number | null });
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const animationFrameIdRef = useRef<number | null>(null);
+  const isMobileRef = useRef(false);
 
   const resolvedCanvasColorsRef = useRef({
       strokeStyle: { r: 255, g: 255, b: 255 }, // Default white for dark background
@@ -54,6 +55,8 @@ export function SplineSceneBasic() {
   }, []);
 
   const drawArrow = useCallback(() => {
+      // Don't draw arrow on mobile screens
+      if (isMobileRef.current) return;
       if (!canvasRef.current || !targetRef.current || !ctxRef.current) return;
 
       const targetEl = targetRef.current;
@@ -121,41 +124,54 @@ export function SplineSceneBasic() {
       const canvas = canvasRef.current;
       if (!canvas || !targetRef.current) return;
 
-      ctxRef.current = canvas.getContext("2d");
-      const ctx = ctxRef.current;
-
-      const updateCanvasSize = () => {
-          if (canvas) {
-              canvas.width = window.innerWidth;
-              canvas.height = window.innerHeight;
-          }
+      const checkIsMobile = () => {
+          // Check if screen width is less than md breakpoint (768px)
+          return window.innerWidth < 768;
       };
 
-      const handleMouseMove = (e: MouseEvent) => {
-          mousePosRef.current = { x: e.clientX, y: e.clientY };
-      };
+      isMobileRef.current = checkIsMobile();
 
-      window.addEventListener("resize", updateCanvasSize);
-      window.addEventListener("mousemove", handleMouseMove);
-      updateCanvasSize();
+      // Only set up arrow animation on desktop
+      if (!isMobileRef.current) {
+          ctxRef.current = canvas.getContext("2d");
+          const ctx = ctxRef.current;
 
-      const animateLoop = () => {
-          if (ctx && canvas) {
-              ctx.clearRect(0, 0, canvas.width, canvas.height);
-              drawArrow();
-          }
-          animationFrameIdRef.current = requestAnimationFrame(animateLoop);
-      };
-      
-      animateLoop();
+          const updateCanvasSize = () => {
+              if (canvas) {
+                  canvas.width = window.innerWidth;
+                  canvas.height = window.innerHeight;
+              }
+              isMobileRef.current = checkIsMobile();
+          };
 
-      return () => {
-          window.removeEventListener("resize", updateCanvasSize);
-          window.removeEventListener("mousemove", handleMouseMove);
-          if (animationFrameIdRef.current) {
-              cancelAnimationFrame(animationFrameIdRef.current);
-          }
-      };
+          const handleMouseMove = (e: MouseEvent) => {
+              if (!isMobileRef.current) {
+                  mousePosRef.current = { x: e.clientX, y: e.clientY };
+              }
+          };
+
+          window.addEventListener("resize", updateCanvasSize);
+          window.addEventListener("mousemove", handleMouseMove);
+          updateCanvasSize();
+
+          const animateLoop = () => {
+              if (ctx && canvas && !isMobileRef.current) {
+                  ctx.clearRect(0, 0, canvas.width, canvas.height);
+                  drawArrow();
+              }
+              animationFrameIdRef.current = requestAnimationFrame(animateLoop);
+          };
+          
+          animateLoop();
+
+          return () => {
+              window.removeEventListener("resize", updateCanvasSize);
+              window.removeEventListener("mousemove", handleMouseMove);
+              if (animationFrameIdRef.current) {
+                  cancelAnimationFrame(animationFrameIdRef.current);
+              }
+          };
+      }
   }, [drawArrow]);
 
   return (
@@ -186,14 +202,14 @@ export function SplineSceneBasic() {
           </div>
         </div>
         {/* Right content */}
-        <div className="flex-1 relative min-h-[300px] md:min-h-full">
+        <div className="flex-1 relative min-h-[300px] md:min-h-full overflow-hidden">
           <SplineScene 
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
             className="w-full h-full"
           />
         </div>
       </div>
-      <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-10" />
+      <canvas ref={canvasRef} className="hidden md:block fixed inset-0 pointer-events-none z-10" />
     </div>
   )
 }

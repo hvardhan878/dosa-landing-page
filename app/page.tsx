@@ -102,7 +102,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="w-full h-full text-white font-medium inline-flex items-center justify-center cursor-pointer rounded-md transition-all duration-300 hover:scale-105"
             >
-              Get Demo
+              Book a Demo
             </a>
           </div>
         </div>
@@ -303,7 +303,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-4 rounded-full bg-white text-black font-medium text-sm hover:bg-gray-200 transition-all cursor-pointer inline-block">
-            Request a Demo
+            Book a Demo
           </a>
         </div>
       </section>

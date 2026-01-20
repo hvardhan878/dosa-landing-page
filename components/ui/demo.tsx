@@ -175,7 +175,7 @@ export function SplineSceneBasic() {
   }, [drawArrow]);
 
   return (
-    <div className="w-full h-[500px] md:h-[600px] bg-black relative overflow-hidden">
+    <div className="w-full h-[700px] md:h-[600px] bg-black relative overflow-hidden">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
       />
@@ -202,7 +202,7 @@ export function SplineSceneBasic() {
           </div>
         </div>
         {/* Right content */}
-        <div className="flex-1 relative min-h-[300px] md:min-h-full overflow-hidden">
+        <div className="flex-1 relative min-h-[400px] md:min-h-full overflow-hidden">
           <SplineScene 
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
             className="w-full h-full"

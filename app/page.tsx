@@ -6,6 +6,7 @@ import { LogoCloud } from "@/components/ui/logo-cloud-3"
 import { ContainerScroll } from "@/components/ui/container-scroll-animation"
 import { SplineSceneBasic } from "@/components/ui/demo"
 import { GlowingEffectDemo } from "@/components/ui/glowing-effect-demo"
+import { LetsWorkTogether } from "@/components/ui/lets-work-section"
 import { cn } from "@/lib/utils"
 
 export default function Home() {
@@ -334,23 +335,7 @@ export default function Home() {
       </section> */}
 
       {/* CTA Section */}
-      <section className="py-24 bg-black relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black opacity-50" />
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-            Unlock Professional-Grade AI
-          </h2>
-          <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-light">
-            Discover how Dosa can streamline your credit analysis workflow.
-          </p>
-          <a href="https://calendly.com/bovojon/15-min-conversation"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-10 py-4 rounded-full bg-white text-black font-medium text-sm hover:bg-gray-200 transition-all cursor-pointer inline-block">
-            Book a Demo
-          </a>
-        </div>
-      </section>
+      <LetsWorkTogether />
       </main>
 
       {/* Footer */}

@@ -17,7 +17,7 @@ const siteUrl = "https://usedosa.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Dosa - Professional-grade AI for Underwriters",
+    default: "Dosa - AI-Enhanced Credit Ops Enablement",
     template: "%s | Dosa",
   },
   description: "AI-powered tools to streamline intake, verification, and analysis across your full underwriting workflow. Professional-grade AI for modern underwriters.",
@@ -43,20 +43,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Dosa",
-    title: "Dosa - Professional-grade AI for Underwriters",
+    title: "Dosa - AI-Enhanced Credit Ops Enablement",
     description: "AI-powered tools to streamline intake, verification, and analysis across your full underwriting workflow.",
     images: [
       {
         url: `${siteUrl}/thumbnail.png`,
         width: 1200,
         height: 630,
-        alt: "Dosa - Professional-grade AI for Underwriters",
+        alt: "Dosa - AI-Enhanced Credit Ops Enablement",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dosa - Professional-grade AI for Underwriters",
+    title: "Dosa - AI-Enhanced Credit Ops Enablement",
     description: "AI-powered tools to streamline intake, verification, and analysis across your full underwriting workflow.",
     images: [`${siteUrl}/thumbnail.png`],
   },
@@ -85,7 +85,7 @@ const organizationSchema = {
   name: "Dosa",
   url: siteUrl,
   logo: `${siteUrl}/favicon.ico`,
-  description: "Professional-grade AI for underwriters",
+  description: "AI-Enhanced Credit Ops Enablement",
   contactPoint: {
     "@type": "ContactPoint",
     email: "hello@usedosa.com",

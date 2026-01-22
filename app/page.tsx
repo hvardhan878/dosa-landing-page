@@ -7,6 +7,7 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation"
 import { SplineSceneBasic } from "@/components/ui/demo"
 import { GlowingEffectDemo } from "@/components/ui/glowing-effect-demo"
 import { LetsWorkTogether } from "@/components/ui/lets-work-section"
+import { Component as TeamComponent } from "@/components/ui/team"
 import { cn } from "@/lib/utils"
 
 export default function Home() {
@@ -271,6 +272,10 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-24 bg-black relative">
+        <TeamComponent />
+      </section>
+
       {/* Vision/Philosophy Section */}
       {/* <section className="bg-black text-white py-32 border-t border-white/10">
         <div className="container mx-auto px-6">
@@ -350,7 +355,7 @@ export default function Home() {
             <div className="col-span-1 md:col-span-1">
               <div className="text-xl font-bold mb-4">DOSA</div>
               <p className="text-gray-500 text-xs leading-relaxed">
-                Professional-grade AI for underwriters and private equity.
+                AI-Enhanced Credit Ops Enablement and private equity.
               </p>
             </div>
             <div>

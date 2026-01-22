@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useCallback } from 'react';
 import { SplineScene } from "@/components/ui/splite";
-import { Spotlight } from "@/components/ui/spotlight"
+import { Spotlight } from "@/components/ui/spotlight";
 
 // Helper to parse 'rgb(r, g, b)' or 'rgba(r, g, b, a)' string to {r, g, b}
 const parseRgbColor = (colorString: string) => {
@@ -21,6 +21,7 @@ const parseRgbColor = (colorString: string) => {
 export function SplineSceneBasic() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const targetRef = useRef<HTMLAnchorElement>(null);
+  const heroContainerRef = useRef<HTMLDivElement>(null);
   const mousePosRef = useRef({ x: null as number | null, y: null as number | null });
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
   const animationFrameIdRef = useRef<number | null>(null);
@@ -57,16 +58,25 @@ export function SplineSceneBasic() {
   const drawArrow = useCallback(() => {
       // Don't draw arrow on mobile screens
       if (isMobileRef.current) return;
-      if (!canvasRef.current || !targetRef.current || !ctxRef.current) return;
+      if (!canvasRef.current || !targetRef.current || !ctxRef.current || !heroContainerRef.current) return;
 
       const targetEl = targetRef.current;
       const ctx = ctxRef.current;
       const mouse = mousePosRef.current;
+      const heroContainer = heroContainerRef.current;
 
       const x0 = mouse.x;
       const y0 = mouse.y;
 
       if (x0 === null || y0 === null) return;
+
+      // Check if cursor is within hero section bounds
+      const heroRect = heroContainer.getBoundingClientRect();
+      if (x0 < heroRect.left || x0 > heroRect.right || y0 < heroRect.top || y0 > heroRect.bottom) {
+          // Clear canvas if cursor is outside hero section
+          ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+          return;
+      }
 
       const rect = targetEl.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
@@ -175,7 +185,7 @@ export function SplineSceneBasic() {
   }, [drawArrow]);
 
   return (
-    <div className="w-full h-[700px] md:h-[600px] bg-black relative overflow-hidden">
+    <div ref={heroContainerRef} className="w-full h-[700px] md:h-[600px] bg-black relative overflow-hidden">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
       />

@@ -123,13 +123,11 @@
     scroll-behavior: smooth;
     overscroll-behavior: none;
     background-color: black;
-    overflow-x: hidden;
   }
   body {
     @apply bg-background text-foreground;
     overscroll-behavior: none;
     background-color: black;
-    overflow-x: hidden;
   }
 }
 

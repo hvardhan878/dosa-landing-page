@@ -176,19 +176,19 @@
 }
 
 .db-light-1 {
-  offset-path: path("M 23.5 15 v 10 q 0 5 5 5 h 66.5 q 5 0 5 5 v 25");
+  offset-path: path("M 36 15 v 10 q 0 5 5 5 h 84 q 5 0 5 5 v 25");
 }
 
 .db-light-2 {
-  offset-path: path("M 71 15 v 5 q 0 5 5 5 h 19 q 5 0 5 5 v 25");
+  offset-path: path("M 90.5 15 v 5 q 0 5 5 5 h 29.5 q 5 0 5 5 v 25");
 }
 
 .db-light-3 {
-  offset-path: path("M 114 15 v 5 q 0 5 -5 5 h -9 q -5 0 -5 5 v 25");
+  offset-path: path("M 150 15 v 5 q 0 5 -5 5 h -10 q -5 0 -5 5 v 25");
 }
 
 .db-light-4 {
-  offset-path: path("M 155 15 v 10 q 0 5 -5 5 h -50 q -5 0 -5 5 v 25");
+  offset-path: path("M 217 15 v 10 q 0 5 -5 5 h -77 q -5 0 -5 5 v 25");
 }
 
 @keyframes database-animation-path {

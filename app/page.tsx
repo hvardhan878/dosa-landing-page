@@ -243,12 +243,12 @@ export default function Home() {
               {/* <GlowingEffectDemo /> */}
               <section className="py-2 bg-black relative">
                 <div className="container mx-auto px-6 flex justify-center">
-                  <div className="p-4w-full">
+                  <div className="p-4 w-full max-w-[700px]">
                     <DatabaseWithRestApi
-                      title="Data exchange using a customized REST API"
-                      circleText="API"
-                      badgeTexts={{ first: "GET", second: "POST", third: "PUT", fourth: "DELETE" }}
-                      buttonTexts={{ first: "Dosa", second: "integrations" }}
+                      title="Dosa automatically integrates with your data sources"
+                      circleText="Score"
+                      badgeTexts={{ first: "Creditsafe", second: "Experian", third: "Amazon reviews", fourth: "Google reviews" }}
+                      buttonTexts={{ first: "Credit checks", second: "Read reviews" }}
                       lightColor="#00A6F5"
                     />
                   </div>

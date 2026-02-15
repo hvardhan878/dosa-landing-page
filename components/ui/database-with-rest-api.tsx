@@ -33,17 +33,18 @@ const DatabaseWithRestApi = ({
   return (
     <div
       className={cn(
-        "relative flex h-[350px] w-full max-w-[500px] flex-col items-center",
+        "relative flex h-[350px] w-full flex-col items-center",
         className
       )}
     >
-      {/* SVG Paths  */}
+      {/* SVG Paths - viewBox widened to 260 to fit longer labels */}
       <svg
         className="h-full sm:w-full text-muted"
         width="100%"
         height="100%"
-        viewBox="0 0 200 100"
+        viewBox="0 0 260 100"
       >
+        {/* Lines from button centers (36, 90.5, 150, 217) converging at x=130 */}
         <g
           stroke="currentColor"
           fill="none"
@@ -51,11 +52,10 @@ const DatabaseWithRestApi = ({
           strokeDasharray="100 100"
           pathLength="100"
         >
-          <path d="M 31 10 v 15 q 0 5 5 5 h 59 q 5 0 5 5 v 10" />
-          <path d="M 77 10 v 10 q 0 5 5 5 h 13 q 5 0 5 5 v 10" />
-          <path d="M 124 10 v 10 q 0 5 -5 5 h -14 q -5 0 -5 5 v 10" />
-          <path d="M 170 10 v 15 q 0 5 -5 5 h -60 q -5 0 -5 5 v 10" />
-          {/* Animation For Path Starting */}
+          <path d="M 36 15 v 10 q 0 5 5 5 h 84 q 5 0 5 5 v 10" />
+          <path d="M 90.5 15 v 5 q 0 5 5 5 h 29.5 q 5 0 5 5 v 10" />
+          <path d="M 150 15 v 5 q 0 5 -5 5 h -10 q -5 0 -5 5 v 10" />
+          <path d="M 217 15 v 10 q 0 5 -5 5 h -77 q -5 0 -5 5 v 10" />
           <animate
             attributeName="stroke-dashoffset"
             from="100"
@@ -69,166 +69,65 @@ const DatabaseWithRestApi = ({
         </g>
         {/* Blue Lights */}
         <g mask="url(#db-mask-1)">
-          <circle
-            className="database db-light-1"
-            cx="0"
-            cy="0"
-            r="12"
-            fill="url(#db-blue-grad)"
-          />
+          <circle className="database db-light-1" cx="0" cy="0" r="12" fill="url(#db-blue-grad)" />
         </g>
         <g mask="url(#db-mask-2)">
-          <circle
-            className="database db-light-2"
-            cx="0"
-            cy="0"
-            r="12"
-            fill="url(#db-blue-grad)"
-          />
+          <circle className="database db-light-2" cx="0" cy="0" r="12" fill="url(#db-blue-grad)" />
         </g>
         <g mask="url(#db-mask-3)">
-          <circle
-            className="database db-light-3"
-            cx="0"
-            cy="0"
-            r="12"
-            fill="url(#db-blue-grad)"
-          />
+          <circle className="database db-light-3" cx="0" cy="0" r="12" fill="url(#db-blue-grad)" />
         </g>
         <g mask="url(#db-mask-4)">
-          <circle
-            className="database db-light-4"
-            cx="0"
-            cy="0"
-            r="12"
-            fill="url(#db-blue-grad)"
-          />
+          <circle className="database db-light-4" cx="0" cy="0" r="12" fill="url(#db-blue-grad)" />
         </g>
-        {/* Buttons */}
+        {/* Buttons - evenly spaced with 15px gaps, sized to fit text */}
         <g stroke="currentColor" fill="none" strokeWidth="0.4">
-          {/* First Button */}
+          {/* Creditsafe: x=15 w=42 center=36 */}
           <g>
-            <rect
-              fill="#18181B"
-              x="14"
-              y="5"
-              width="34"
-              height="10"
-              rx="5"
-            ></rect>
-            <DatabaseIcon x="18" y="7.5"></DatabaseIcon>
-            <text
-              x="28"
-              y="12"
-              fill="white"
-              stroke="none"
-              fontSize="5"
-              fontWeight="500"
-            >
-              {badgeTexts?.first || "GET"}
+            <rect fill="#18181B" x="15" y="5" width="42" height="10" rx="5" />
+            <DatabaseIcon x="19" y="7.5" />
+            <text x="27" y="12" fill="white" stroke="none" fontSize="5" fontWeight="500">
+              {badgeTexts?.first || "Creditsafe"}
             </text>
           </g>
-          {/* Second Button */}
+          {/* Experian: x=72 w=37 center=90.5 */}
           <g>
-            <rect
-              fill="#18181B"
-              x="60"
-              y="5"
-              width="34"
-              height="10"
-              rx="5"
-            ></rect>
-            <DatabaseIcon x="64" y="7.5"></DatabaseIcon>
-            <text
-              x="74"
-              y="12"
-              fill="white"
-              stroke="none"
-              fontSize="5"
-              fontWeight="500"
-            >
-              {badgeTexts?.second || "POST"}
+            <rect fill="#18181B" x="72" y="5" width="37" height="10" rx="5" />
+            <DatabaseIcon x="76" y="7.5" />
+            <text x="84" y="12" fill="white" stroke="none" fontSize="5" fontWeight="500">
+              {badgeTexts?.second || "Experian"}
             </text>
           </g>
-          {/* Third Button */}
+          {/* Amazon reviews: x=124 w=52 center=150 */}
           <g>
-            <rect
-              fill="#18181B"
-              x="108"
-              y="5"
-              width="34"
-              height="10"
-              rx="5"
-            ></rect>
-            <DatabaseIcon x="112" y="7.5"></DatabaseIcon>
-            <text
-              x="122"
-              y="12"
-              fill="white"
-              stroke="none"
-              fontSize="5"
-              fontWeight="500"
-            >
-              {badgeTexts?.third || "PUT"}
+            <rect fill="#18181B" x="124" y="5" width="52" height="10" rx="5" />
+            <DatabaseIcon x="128" y="7.5" />
+            <text x="136" y="12" fill="white" stroke="none" fontSize="5" fontWeight="500">
+              {badgeTexts?.third || "Amazon reviews"}
             </text>
           </g>
-          {/* Fourth Button */}
+          {/* Google reviews: x=191 w=52 center=217 */}
           <g>
-            <rect
-              fill="#18181B"
-              x="150"
-              y="5"
-              width="40"
-              height="10"
-              rx="5"
-            ></rect>
-            <DatabaseIcon x="154" y="7.5"></DatabaseIcon>
-            <text
-              x="165"
-              y="12"
-              fill="white"
-              stroke="none"
-              fontSize="5"
-              fontWeight="500"
-            >
-              {badgeTexts?.fourth || "DELETE"}
+            <rect fill="#18181B" x="191" y="5" width="52" height="10" rx="5" />
+            <DatabaseIcon x="195" y="7.5" />
+            <text x="203" y="12" fill="white" stroke="none" fontSize="5" fontWeight="500">
+              {badgeTexts?.fourth || "Google reviews"}
             </text>
           </g>
         </g>
         <defs>
-          {/* 1 -  user list */}
           <mask id="db-mask-1">
-            <path
-              d="M 31 10 v 15 q 0 5 5 5 h 59 q 5 0 5 5 v 10"
-              strokeWidth="0.5"
-              stroke="white"
-            />
+            <path d="M 36 15 v 10 q 0 5 5 5 h 84 q 5 0 5 5 v 10" strokeWidth="0.5" stroke="white" />
           </mask>
-          {/* 2 - task list */}
           <mask id="db-mask-2">
-            <path
-              d="M 77 10 v 10 q 0 5 5 5 h 13 q 5 0 5 5 v 10"
-              strokeWidth="0.5"
-              stroke="white"
-            />
+            <path d="M 90.5 15 v 5 q 0 5 5 5 h 29.5 q 5 0 5 5 v 10" strokeWidth="0.5" stroke="white" />
           </mask>
-          {/* 3 - backlogs */}
           <mask id="db-mask-3">
-            <path
-              d="M 124 10 v 10 q 0 5 -5 5 h -14 q -5 0 -5 5 v 10"
-              strokeWidth="0.5"
-              stroke="white"
-            />
+            <path d="M 150 15 v 5 q 0 5 -5 5 h -10 q -5 0 -5 5 v 10" strokeWidth="0.5" stroke="white" />
           </mask>
-          {/* 4 - misc */}
           <mask id="db-mask-4">
-            <path
-              d="M 170 10 v 15 q 0 5 -5 5 h -60 q -5 0 -5 5 v 10"
-              strokeWidth="0.5"
-              stroke="white"
-            />
+            <path d="M 217 15 v 10 q 0 5 -5 5 h -77 q -5 0 -5 5 v 10" strokeWidth="0.5" stroke="white" />
           </mask>
-          {/* Blue Grad */}
           <radialGradient id="db-blue-grad" fx="1">
             <stop offset="0%" stopColor={lightColor || "#00A6F5"} />
             <stop offset="100%" stopColor="transparent" />
@@ -237,13 +136,11 @@ const DatabaseWithRestApi = ({
       </svg>
       {/* Main Box */}
       <div className="absolute bottom-10 flex w-full flex-col items-center">
-        {/* bottom shadow */}
-        <div className="absolute -bottom-4 h-[100px] w-[62%] rounded-lg bg-accent/30" />
         {/* box title */}
         <div className="absolute -top-3 z-20 flex items-center justify-center rounded-lg border bg-[#101112] px-2 py-1 sm:-top-4 sm:py-1.5">
           <SparklesIcon className="size-3" />
-          <span className="ml-2 text-[10px]">
-            {title ? title : "Data exchange using a customized REST API"}
+          <span className="ml-2">
+            {title ? title : "Dosa automatically integrates with your data sources"}
           </span>
         </div>
         {/* box outter circle */}

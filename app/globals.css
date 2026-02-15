@@ -164,3 +164,38 @@
     transform: rotate(360deg);
   }
 }
+
+/* Database with REST API component */
+.database {
+  offset-anchor: 10px 0px;
+  animation: database-animation-path;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.db-light-1 {
+  offset-path: path("M 23.5 15 v 10 q 0 5 5 5 h 66.5 q 5 0 5 5 v 25");
+}
+
+.db-light-2 {
+  offset-path: path("M 71 15 v 5 q 0 5 5 5 h 19 q 5 0 5 5 v 25");
+}
+
+.db-light-3 {
+  offset-path: path("M 114 15 v 5 q 0 5 -5 5 h -9 q -5 0 -5 5 v 25");
+}
+
+.db-light-4 {
+  offset-path: path("M 155 15 v 10 q 0 5 -5 5 h -50 q -5 0 -5 5 v 25");
+}
+
+@keyframes database-animation-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}

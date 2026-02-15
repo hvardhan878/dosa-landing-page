@@ -194,7 +194,7 @@ export function SplineSceneBasic() {
         {/* Left content */}
         <div className="flex-1 p-8 md:p-12 relative z-10 flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
-            Reliable AI for Efficient Credit Teams
+            De-risk your portfolio with 360° borrower intelligence
           </h1>
           <p className="mt-6 text-neutral-300 text-lg max-w-lg">
             AI-Enhanced Credit Analysis so you can process 12x more Deals.

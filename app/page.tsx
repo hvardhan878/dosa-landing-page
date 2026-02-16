@@ -246,9 +246,9 @@ export default function Home() {
                   <div className="p-4 w-full max-w-[700px]">
                     <DatabaseWithRestApi
                       title="Dosa automatically integrates with your data sources"
-                      circleText="Score"
+                      circleText="65"
                       badgeTexts={{ first: "Creditsafe", second: "Experian", third: "Amazon reviews", fourth: "Google reviews" }}
-                      buttonTexts={{ first: "Credit checks", second: "Read reviews" }}
+                      buttonTexts={{ first: "Credit Bureaus", second: "Social Media" }}
                       lightColor="#00A6F5"
                     />
                   </div>

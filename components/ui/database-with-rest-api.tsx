@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { Folder, HeartHandshakeIcon, SparklesIcon } from "lucide-react";
+import { ChartCandlestick, SparklesIcon, Share2Icon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface DatabaseWithRestApiProps {
@@ -44,18 +44,17 @@ const DatabaseWithRestApi = ({
         height="100%"
         viewBox="0 0 260 100"
       >
-        {/* Lines from button centers (36, 90.5, 150, 217) converging at x=130 */}
+        {/* Lines from button centers (39, 92, 150, 216) converging at x=130 */}
         <g
           stroke="currentColor"
           fill="none"
           strokeWidth="0.4"
           strokeDasharray="100 100"
-          pathLength="100"
         >
-          <path d="M 36 15 v 10 q 0 5 5 5 h 84 q 5 0 5 5 v 10" />
-          <path d="M 90.5 15 v 5 q 0 5 5 5 h 29.5 q 5 0 5 5 v 10" />
-          <path d="M 150 15 v 5 q 0 5 -5 5 h -10 q -5 0 -5 5 v 10" />
-          <path d="M 217 15 v 10 q 0 5 -5 5 h -77 q -5 0 -5 5 v 10" />
+          <path d="M 39 15 v 10 q 0 5 5 5 h 81 q 5 0 5 5 v 10" pathLength={100} />
+          <path d="M 92 15 v 5 q 0 5 5 5 h 28 q 5 0 5 5 v 10" pathLength={100} />
+          <path d="M 150 15 v 5 q 0 5 -5 5 h -10 q -5 0 -5 5 v 10" pathLength={100} />
+          <path d="M 216 15 v 10 q 0 5 -5 5 h -76 q -5 0 -5 5 v 10" pathLength={100} />
           <animate
             attributeName="stroke-dashoffset"
             from="100"
@@ -80,53 +79,53 @@ const DatabaseWithRestApi = ({
         <g mask="url(#db-mask-4)">
           <circle className="database db-light-4" cx="0" cy="0" r="12" fill="url(#db-blue-grad)" />
         </g>
-        {/* Buttons - evenly spaced with 15px gaps, sized to fit text */}
+        {/* Buttons - evenly spaced, sized to fit content */}
         <g stroke="currentColor" fill="none" strokeWidth="0.4">
-          {/* Creditsafe: x=15 w=42 center=36 */}
+          {/* Creditsafe: x=15 w=48 center=39 */}
           <g>
-            <rect fill="#18181B" x="15" y="5" width="42" height="10" rx="5" />
-            <DatabaseIcon x="19" y="7.5" />
-            <text x="27" y="12" fill="white" stroke="none" fontSize="5" fontWeight="500">
+            <rect fill="white" x="15" y="5" width="48" height="10" rx="5" />
+            <image href="" x="18" y="6" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
+            <text x="27" y="12" fill="#18181B" stroke="none" fontSize="6" fontWeight="500">
               {badgeTexts?.first || "Creditsafe"}
             </text>
           </g>
-          {/* Experian: x=72 w=37 center=90.5 */}
+          {/* Experian: x=71 w=42 center=92 */}
           <g>
-            <rect fill="#18181B" x="72" y="5" width="37" height="10" rx="5" />
-            <DatabaseIcon x="76" y="7.5" />
-            <text x="84" y="12" fill="white" stroke="none" fontSize="5" fontWeight="500">
+            <rect fill="white" x="71" y="5" width="42" height="10" rx="5" />
+            <image href="" x="74" y="6" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
+            <text x="83" y="12" fill="#18181B" stroke="none" fontSize="6" fontWeight="500">
               {badgeTexts?.second || "Experian"}
             </text>
           </g>
-          {/* Amazon reviews: x=124 w=52 center=150 */}
+          {/* Amazon reviews: x=121 w=58 center=150 */}
           <g>
-            <rect fill="#18181B" x="124" y="5" width="52" height="10" rx="5" />
-            <DatabaseIcon x="128" y="7.5" />
-            <text x="136" y="12" fill="white" stroke="none" fontSize="5" fontWeight="500">
+            <rect fill="white" x="121" y="5" width="58" height="10" rx="5" />
+            <image href="" x="124" y="6" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
+            <text x="133" y="12" fill="#18181B" stroke="none" fontSize="6" fontWeight="500">
               {badgeTexts?.third || "Amazon reviews"}
             </text>
           </g>
-          {/* Google reviews: x=191 w=52 center=217 */}
+          {/* Google reviews: x=187 w=58 center=216 */}
           <g>
-            <rect fill="#18181B" x="191" y="5" width="52" height="10" rx="5" />
-            <DatabaseIcon x="195" y="7.5" />
-            <text x="203" y="12" fill="white" stroke="none" fontSize="5" fontWeight="500">
+            <rect fill="white" x="187" y="5" width="58" height="10" rx="5" />
+            <image href="" x="190" y="6" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
+            <text x="199" y="12" fill="#18181B" stroke="none" fontSize="6" fontWeight="500">
               {badgeTexts?.fourth || "Google reviews"}
             </text>
           </g>
         </g>
         <defs>
           <mask id="db-mask-1">
-            <path d="M 36 15 v 10 q 0 5 5 5 h 84 q 5 0 5 5 v 10" strokeWidth="0.5" stroke="white" />
+            <path d="M 39 15 v 10 q 0 5 5 5 h 81 q 5 0 5 5 v 10" strokeWidth="0.5" stroke="white" />
           </mask>
           <mask id="db-mask-2">
-            <path d="M 90.5 15 v 5 q 0 5 5 5 h 29.5 q 5 0 5 5 v 10" strokeWidth="0.5" stroke="white" />
+            <path d="M 92 15 v 5 q 0 5 5 5 h 28 q 5 0 5 5 v 10" strokeWidth="0.5" stroke="white" />
           </mask>
           <mask id="db-mask-3">
             <path d="M 150 15 v 5 q 0 5 -5 5 h -10 q -5 0 -5 5 v 10" strokeWidth="0.5" stroke="white" />
           </mask>
           <mask id="db-mask-4">
-            <path d="M 217 15 v 10 q 0 5 -5 5 h -77 q -5 0 -5 5 v 10" strokeWidth="0.5" stroke="white" />
+            <path d="M 216 15 v 10 q 0 5 -5 5 h -76 q -5 0 -5 5 v 10" strokeWidth="0.5" stroke="white" />
           </mask>
           <radialGradient id="db-blue-grad" fx="1">
             <stop offset="0%" stopColor={lightColor || "#00A6F5"} />
@@ -144,19 +143,19 @@ const DatabaseWithRestApi = ({
           </span>
         </div>
         {/* box outter circle */}
-        <div className="absolute -bottom-8 z-30 grid h-[60px] w-[60px] place-items-center rounded-full border-t bg-[#141516] font-semibold text-xs">
+        <div className="absolute -bottom-8 z-30 grid h-[60px] w-[60px] place-items-center rounded-full bg-[#f56565] font-semibold text-lg">
           {circleText ? circleText : "SVG"}
         </div>
         {/* box content */}
         <div className="relative z-10 flex h-[150px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background shadow-md">
           {/* Badges */}
           <div className="absolute bottom-8 left-12 z-10 h-7 rounded-full bg-[#101112] px-3 text-xs border flex items-center gap-2 ">
-            <HeartHandshakeIcon className="size-4" />
-            <span>{buttonTexts?.first || "LegionDev"}</span>
+            <ChartCandlestick className="size-4" />
+            <span style={{ fontSize: "14px" }}>{buttonTexts?.first}</span>
           </div>
           <div className="absolute right-16 z-10 hidden h-7 rounded-full bg-[#101112] px-3 text-xs sm:flex border items-center gap-2">
-            <Folder className="size-4" />
-            <span>{buttonTexts?.second || "v2_updates"}</span>
+            <Share2Icon className="size-4" />
+            <span style={{ fontSize: "14px" }}>{buttonTexts?.second}</span>
           </div>
           {/* Circles */}
           <motion.div
@@ -195,25 +194,4 @@ const DatabaseWithRestApi = ({
 
 export default DatabaseWithRestApi;
 
-const DatabaseIcon = ({ x = "0", y = "0" }: { x: string; y: string }) => {
-  return (
-    <svg
-      x={x}
-      y={y}
-      xmlns="http://www.w3.org/2000/svg"
-      width="5"
-      height="5"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="white"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <ellipse cx="12" cy="5" rx="9" ry="3" />
-      <path d="M3 5V19A9 3 0 0 0 21 19V5" />
-      <path d="M3 12A9 3 0 0 0 21 12" />
-    </svg>
-  );
-};
 

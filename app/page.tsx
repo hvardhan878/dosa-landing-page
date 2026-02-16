@@ -245,7 +245,7 @@ export default function Home() {
                 <div className="container mx-auto px-6 flex justify-center">
                   <div className="p-4 w-full max-w-[700px]">
                     <DatabaseWithRestApi
-                      title="Dosa automatically integrates with your data sources"
+                      title="Dosa elevates your risk scoring engine"
                       circleText="65"
                       badgeTexts={{ first: "Creditsafe", second: "Experian", third: "Amazon reviews", fourth: "Google reviews" }}
                       buttonTexts={{ first: "Credit Bureaus", second: "Social Media" }}

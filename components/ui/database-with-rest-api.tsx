@@ -84,7 +84,7 @@ const DatabaseWithRestApi = ({
           {/* Creditsafe: x=15 w=48 center=39 */}
           <g>
             <rect fill="white" x="15" y="5" width="48" height="10" rx="5" />
-            <image href="" x="18" y="6" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
+            <image href="https://play-lh.googleusercontent.com/MrBk4Axz8cm-lYpMQNywtuSnzP5AjworOaP4XLQJIkY3lurz-iiQsXKuSN4JvI1ruA" x="18" y="6" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
             <text x="27" y="12" fill="#18181B" stroke="none" fontSize="6" fontWeight="500">
               {badgeTexts?.first || "Creditsafe"}
             </text>
@@ -92,15 +92,15 @@ const DatabaseWithRestApi = ({
           {/* Experian: x=71 w=42 center=92 */}
           <g>
             <rect fill="white" x="71" y="5" width="42" height="10" rx="5" />
-            <image href="" x="74" y="6" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
+            <image href="https://companieslogo.com/img/orig/EXPGF-079d6efe.png?t=1720244491" x="75" y="6" width="6" height="6" preserveAspectRatio="xMidYMid meet" />
             <text x="83" y="12" fill="#18181B" stroke="none" fontSize="6" fontWeight="500">
               {badgeTexts?.second || "Experian"}
             </text>
           </g>
           {/* Amazon reviews: x=121 w=58 center=150 */}
           <g>
-            <rect fill="white" x="121" y="5" width="58" height="10" rx="5" />
-            <image href="" x="124" y="6" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
+            <rect fill="white" x="121" y="5" width="62" height="10" rx="5" />
+            <image href="https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_icon.png" x="124" y="7" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
             <text x="133" y="12" fill="#18181B" stroke="none" fontSize="6" fontWeight="500">
               {badgeTexts?.third || "Amazon reviews"}
             </text>
@@ -108,7 +108,7 @@ const DatabaseWithRestApi = ({
           {/* Google reviews: x=187 w=58 center=216 */}
           <g>
             <rect fill="white" x="187" y="5" width="58" height="10" rx="5" />
-            <image href="" x="190" y="6" width="7" height="7" preserveAspectRatio="xMidYMid meet" />
+            <image href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2sSeQqjaUTuZ3gRgkKjidpaipF_l6s72lBw&s" x="191" y="7" width="6" height="6" preserveAspectRatio="xMidYMid meet" />
             <text x="199" y="12" fill="#18181B" stroke="none" fontSize="6" fontWeight="500">
               {badgeTexts?.fourth || "Google reviews"}
             </text>
@@ -139,7 +139,7 @@ const DatabaseWithRestApi = ({
         <div className="absolute -top-3 z-20 flex items-center justify-center rounded-lg border bg-[#101112] px-2 py-1 sm:-top-4 sm:py-1.5">
           <SparklesIcon className="size-3" />
           <span className="ml-2">
-            {title ? title : "Dosa automatically integrates with your data sources"}
+            {title ? title : "Dosa elevates your risk scoring engine"}
           </span>
         </div>
         {/* box outter circle */}

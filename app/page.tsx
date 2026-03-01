@@ -2,13 +2,10 @@
 
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { LogoCloud } from "@/components/ui/logo-cloud-3"
 import { ContainerScroll } from "@/components/ui/container-scroll-animation"
 import { SplineSceneBasic } from "@/components/ui/demo"
-import { GlowingEffectDemo } from "@/components/ui/glowing-effect-demo"
 import { LetsWorkTogether } from "@/components/ui/lets-work-section"
-import { Component as TeamComponent } from "@/components/ui/team"
-import { cn } from "@/lib/utils"
+import DatabaseWithRestApi from "@/components/ui/database-with-rest-api"
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -187,7 +184,7 @@ export default function Home() {
             </>
           }
         >
-          <div className="relative w-full h-full">
+          {/* <div className="relative w-full h-full">
             <video
               ref={videoRef}
               src="https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/email_agent_demo.mp4"
@@ -226,7 +223,8 @@ export default function Home() {
                 </div>
               </button>
             )}
-          </div>
+          </div> */}
+          <img src="https://jayonlxijgrduoztkmgz.supabase.co/storage/v1/object/public/landing-page/dosa-credit.png" alt="Dosa - AI-Powered Underwriting Platform" className="mx-auto rounded-2xl object-cover h-full w-full" />
         </ContainerScroll>
       </div>
 
@@ -234,21 +232,34 @@ export default function Home() {
       <section className="py-24 bg-black relative">
         <div className="container mx-auto px-6">
           <div className="mb-16 max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">
-              Built For High-Stakes Decisions
-            </h2>
-            <p className="text-lg text-gray-400">
-              Professional-grade AI tools designed for your team's unique workflows in underwriting and credit analysis.
-            </p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">
+                Built For High-Stakes Decisions
+              </h2>
+              <p className="text-lg text-gray-400">
+                Professional-grade AI tools designed for your team's unique workflows in underwriting and credit analysis.
+              </p>
+            </div>
+            <div className="max-w-7xl mx-auto">
+              {/* <GlowingEffectDemo /> */}
+              <section className="py-2 bg-black relative">
+                <div className="container mx-auto px-6 flex justify-center">
+                  <div className="p-4 w-full max-w-[700px]">
+                    <DatabaseWithRestApi
+                      title="Dosa elevates your risk scoring engine"
+                      circleText="65"
+                      badgeTexts={{ first: "Creditsafe", second: "Experian", third: "Amazon reviews", fourth: "Google reviews" }}
+                      buttonTexts={{ first: "Credit Bureaus", second: "Social Media" }}
+                      lightColor="#00A6F5"
+                    />
+                  </div>
+                </div>
+              </section>
+            </div>
           </div>
-          <div className="max-w-7xl mx-auto">
-            <GlowingEffectDemo />
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Trusted By Section */}
-      <section className="py-16 bg-black relative">
+        {/* Trusted By Section */}
+        {/* <section className="py-16 bg-black relative">
         <div
           aria-hidden="true"
           className={cn(
@@ -260,9 +271,6 @@ export default function Home() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="relative mx-auto max-w-5xl">
             <h2 className="mb-5 text-center font-medium text-white text-xl tracking-tight md:text-3xl">
-              {/* <span className="text-gray-400">Trusted by experts.</span>
-              <br />
-              <span className="font-semibold text-white">Used by the leaders.</span> */}
               <span className="font-semibold text-white">Made by experts from</span>
             </h2>
             <div className="mx-auto my-5 h-px max-w-sm bg-gray-700/50 [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
@@ -270,11 +278,11 @@ export default function Home() {
             <div className="mt-5 h-px bg-gray-700/50 [mask-image:linear-gradient(to_right,transparent,black,transparent)]" />
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="py-24 bg-black relative">
+      {/* <section className="py-24 bg-black relative">
         <TeamComponent />
-      </section>
+      </section> */}
 
       {/* Vision/Philosophy Section */}
       {/* <section className="bg-black text-white py-32 border-t border-white/10">
